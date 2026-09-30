@@ -34,10 +34,17 @@ jobs:
 
 
   # =========================
+<<<<<<< HEAD
   # 2. BUILD & PUSH
   # =========================
   build-and-push:
     name: Build and Push Docker Image
+=======
+  # 2. DOCKER BUILD
+  # =========================
+  build:
+    name: Build Docker Image
+>>>>>>> ab31397 (demo)
     runs-on: ubuntu-latest
 
     needs: test
@@ -47,6 +54,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+<<<<<<< HEAD
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -106,3 +114,8 @@ jobs:
             echo "Deployment completed!"
 
             docker ps
+=======
+      - name: Build Docker Image
+        run: |
+          docker build -t vspire-website .
+>>>>>>> ab31397 (demo)
